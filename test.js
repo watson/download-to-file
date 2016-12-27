@@ -16,9 +16,8 @@ test('200 Ok', function (t) {
 
   server.listen(function () {
     var url = 'http://localhost:' + server.address().port
-    var filename = Date.now() + '.tmp'
-    var file = path.join(DIR, filename)
-    download(url, DIR, filename, function (err) {
+    var file = path.join(DIR, String(Date.now()))
+    download(url, file, function (err) {
       t.error(err)
       t.ok(fs.existsSync(file))
       t.ok(fs.readFileSync(file), 'Hello World')
@@ -36,9 +35,8 @@ test('Not 200 Ok', function (t) {
 
   server.listen(function () {
     var url = 'http://localhost:' + server.address().port
-    var filename = Date.now() + '.tmp'
-    var file = path.join(DIR, filename)
-    download(url, DIR, filename, function (err) {
+    var file = path.join(DIR, String(Date.now()))
+    download(url, file, function (err) {
       t.equal(err.code, 500)
       t.equal(err.message, 'Unexpected HTTP status code: 500')
       t.notOk(fs.existsSync(file))

@@ -7,7 +7,7 @@ var https = require('https')
 var mkdirp = require('mkdirp')
 var pump = require('pump')
 
-module.exports = function (url, dir, name, cb) {
+module.exports = function (url, filepath, cb) {
   var transport = url.indexOf('https://') === 0 ? https : http
   return transport.get(url, function (res) {
     if (res.statusCode !== 200) {
@@ -16,9 +16,9 @@ module.exports = function (url, dir, name, cb) {
       cb(err)
       return
     }
-    mkdirp(dir, function (err) {
+    mkdirp(path.dirname(filepath), function (err) {
       if (err) return cb(err)
-      var file = fs.createWriteStream(path.join(dir, name))
+      var file = fs.createWriteStream(filepath)
       pump(res, file, cb)
     })
   }).on('error', cb)
