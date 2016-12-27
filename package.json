@@ -1,0 +1,34 @@
+{
+  "name": "download-to-file",
+  "version": "0.0.0",
+  "description": "Download a file to disk programmatically",
+  "main": "index.js",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "pump": "^1.0.2"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/download-to-file.git"
+  },
+  "keywords": [
+    "download",
+    "disk",
+    "file",
+    "save",
+    "fs"
+  ],
+  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watson/download-to-file/issues"
+  },
+  "homepage": "https://github.com/watson/download-to-file#readme"
+}
