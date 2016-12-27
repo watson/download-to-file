@@ -1,6 +1,6 @@
 {
   "name": "download-to-file",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Download a file to disk programmatically",
   "main": "index.js",
   "dependencies": {
@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/watson/download-to-file/issues"
   },
-  "homepage": "https://github.com/watson/download-to-file#readme"
+  "homepage": "https://github.com/watson/download-to-file#readme",
+  "coordinates": [
+    53.56204936448514,
+    9.985748261450226
+  ]
 }
