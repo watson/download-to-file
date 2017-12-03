@@ -17,9 +17,9 @@ npm install download-to-file --save
 var download = require('download-to-file')
 
 console.log('Downloading to /tmp/example.html')
-download('http://example.com/', '/tmp/example.html', function (err) {
+download('http://example.com/', '/tmp/example.html', function (err, filepath) {
   if (err) throw err
-  console.log('Download finished')
+  console.log('Download finished:', filepath)
 })
 ```
 
@@ -29,7 +29,8 @@ download('http://example.com/', '/tmp/example.html', function (err) {
 
 Will download the content of the given `url` and store it in a file
 specified by `filepath`. When done, the `callback` will be called with
-an optional error object as the first argument.
+an optional error object as the first argument and the `filepath` as the
+second argument.
 
 If the server does not return a 200 HTTP status code, the callback will
 be called with an error and the file will not be stored on disk.

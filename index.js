@@ -19,7 +19,9 @@ module.exports = function (url, filepath, cb) {
     mkdirp(path.dirname(filepath), function (err) {
       if (err) return cb(err)
       var file = fs.createWriteStream(filepath)
-      pump(res, file, cb)
+      pump(res, file, function (err) {
+        cb(err, filepath)
+      })
     })
   }).on('error', cb)
 }

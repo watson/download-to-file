@@ -17,10 +17,11 @@ test('200 Ok', function (t) {
   server.listen(function () {
     var url = 'http://localhost:' + server.address().port
     var file = path.join(DIR, String(Date.now()))
-    download(url, file, function (err) {
+    download(url, file, function (err, filepath) {
       t.error(err)
       t.ok(fs.existsSync(file))
       t.ok(fs.readFileSync(file), 'Hello World')
+      t.equal(file, filepath)
       server.close()
       t.end()
     })
