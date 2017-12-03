@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "pump": "^1.0.2"
+    "pump": "^2.0.0"
   },
   "devDependencies": {
     "standard": "^10.0.3",
